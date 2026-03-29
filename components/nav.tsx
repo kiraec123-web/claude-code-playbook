@@ -16,6 +16,7 @@ const guideGroups = [
   {
     label: "Build",
     links: [
+      { href: "/agent-room", label: "The Agent Room" },
       { href: "/user-stories", label: "User Stories" },
       { href: "/agents-and-tools", label: "Agents & Tools" },
       { href: "/hooks", label: "Hooks" },

@@ -14,6 +14,7 @@ const guideGroups = [
     label: "Build",
     tag: "Advanced",
     guides: [
+      { href: "/agent-room", label: "The Agent Room", description: "Spin up a virtual product team: critic, user, designer, architect, PM." },
       { href: "/user-stories", label: "User Stories & Tickets", description: "Spec-first stories, epic breakdowns, acceptance criteria." },
       { href: "/agents-and-tools", label: "Agents & Tools", description: "Autonomy spectrum, slash commands, MCP tools, checkpoints." },
       { href: "/hooks", label: "Hooks", description: "Deterministic lifecycle controls: block ops, auto-format, inject context." },
@@ -117,7 +118,7 @@ export default function Home() {
       <section id="guides" className="mx-auto max-w-7xl px-6 py-16">
         <div className="flex items-center justify-between mb-10">
           <h2 className="text-xs font-semibold uppercase tracking-widest text-[#3f3f46]">Reference Guides</h2>
-          <span className="text-xs text-[#3f3f46] font-mono">12 guides</span>
+          <span className="text-xs text-[#3f3f46] font-mono">13 guides</span>
         </div>
 
         <div className="flex flex-col gap-10">
