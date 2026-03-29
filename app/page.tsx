@@ -1,60 +1,72 @@
 import Link from "next/link";
 
-const guideGroups = [
+const featuredPath = [
   {
-    label: "Reference",
-    tag: "Core skill",
-    guides: [
-      { href: "/prompt-library", label: "Prompt Library", description: "Copy-paste prompts for every stage: agent room, reviews, stories, debugging." },
-    ],
+    step: "01",
+    href: "/how-i-work",
+    label: "How I Work",
+    description: "The full methodology: understand the problem, spec before you build, break into epics, build in parallel, ship clean.",
+    cta: "Start here",
   },
   {
+    step: "02",
+    href: "/agent-room",
+    label: "The Agent Room",
+    description: "Spin up a virtual product team — critic, user, designer, architect, PM, security — and synthesize their feedback into a sprint-ready spec.",
+    cta: "Build your team",
+  },
+  {
+    step: "03",
+    href: "/sprint-efficiency",
+    label: "10x Your Sprint",
+    description: "The 8 compounding habits: front-load clarity, parallel over sequential, hooks eliminate repetition, rewind early.",
+    cta: "Compound the gains",
+  },
+  {
+    step: "04",
+    href: "/prompt-library",
+    label: "Prompt Library",
+    description: "25+ copy-paste prompts for every stage: agent room, daily reviews, story writing, debugging, testing, meta prompts.",
+    cta: "Copy & use",
+  },
+];
+
+const allGuides = [
+  {
     label: "Foundation",
-    tag: "Foundation",
-    guides: [
-      { href: "/getting-started", label: "Getting Started", description: "CLAUDE.md, onboarding to codebases, navigating large repos." },
-      { href: "/prompting", label: "Prompting Patterns", description: "Constraints over goals, negative instructions, iteration." },
-      { href: "/memory-and-context", label: "Memory & Context", description: "How context works, session management, designing for amnesia." },
+    links: [
+      { href: "/getting-started", label: "Getting Started" },
+      { href: "/prompting", label: "Prompting Patterns" },
+      { href: "/memory-and-context", label: "Memory & Context" },
     ],
   },
   {
     label: "Build",
-    tag: "Advanced",
-    guides: [
-      { href: "/agent-room", label: "The Agent Room", description: "Spin up a virtual product team: critic, user, designer, architect, PM." },
-      { href: "/sprint-efficiency", label: "10x Your Sprint", description: "The 8 habits that compound: parallel work, clear discipline, rewind early." },
-      { href: "/scheduled-reviews", label: "Scheduled Reviews", description: "Daily review, CEO & user agents, automated audits, slash command library." },
-      { href: "/user-stories", label: "User Stories & Tickets", description: "Spec-first stories, epic breakdowns, acceptance criteria." },
-      { href: "/agents-and-tools", label: "Agents & Tools", description: "Autonomy spectrum, slash commands, MCP tools, checkpoints." },
-      { href: "/hooks", label: "Hooks", description: "Deterministic lifecycle controls: block ops, auto-format, inject context." },
-      { href: "/plan-mode", label: "Plan Mode", description: "Shift+Tab planning, RIPER workflow, spec-driven development." },
+    links: [
+      { href: "/user-stories", label: "User Stories & Tickets" },
+      { href: "/agents-and-tools", label: "Agents & Tools" },
+      { href: "/hooks", label: "Hooks" },
+      { href: "/plan-mode", label: "Plan Mode" },
+      { href: "/scheduled-reviews", label: "Scheduled Reviews" },
     ],
   },
   {
     label: "Quality",
-    tag: "Quality",
-    guides: [
-      { href: "/testing", label: "Testing", description: "TDD with Claude, failure modes, mutation testing, multi-pass review." },
-      { href: "/debugging", label: "Debugging", description: "Reproducible reports, fix loops, preventing test-cheating." },
-      { href: "/code-review", label: "Code Review & QA", description: "Claude as reviewer, diff discipline, structured QA pass." },
+    links: [
+      { href: "/testing", label: "Testing" },
+      { href: "/debugging", label: "Debugging" },
+      { href: "/code-review", label: "Code Review & QA" },
+      { href: "/changelog-and-prs", label: "Changelog & PRs" },
     ],
   },
   {
     label: "Config",
-    tag: "Safety",
-    guides: [
-      { href: "/settings-and-shortcuts", label: "Settings & Shortcuts", description: "Settings hierarchy, Esc rewind, /clear discipline, worktrees." },
-      { href: "/security", label: "Security", description: "Secrets hygiene, bash permissions, prompt injection, credentials." },
+    links: [
+      { href: "/settings-and-shortcuts", label: "Settings & Shortcuts" },
+      { href: "/security", label: "Security" },
     ],
   },
 ];
-
-const tagColors: Record<string, string> = {
-  Foundation: "text-[#60a5fa]",
-  Advanced: "text-[#f5a623]",
-  Quality: "text-[#4ade80]",
-  Safety: "text-[#f87171]",
-};
 
 export default function Home() {
   return (
@@ -91,68 +103,71 @@ export default function Home() {
               href="/how-i-work"
               className="inline-flex items-center gap-2 bg-[#f5a623] text-[#0a0a0a] font-semibold text-sm px-5 py-2.5 rounded-md hover:bg-[#e09520] transition-colors"
             >
-              How I Work →
+              Start with How I Work →
             </Link>
-            <a href="#guides" className="text-sm text-[#71717a] hover:text-[#fafafa] transition-colors">
-              Browse guides
+            <a href="#all-guides" className="text-sm text-[#71717a] hover:text-[#fafafa] transition-colors">
+              Browse all guides
             </a>
           </div>
         </div>
       </section>
 
-      {/* How I Work feature card */}
+      {/* Featured path */}
       <section className="border-b border-[#1a1a1a]">
-        <div className="mx-auto max-w-7xl px-6 py-10">
-          <Link
-            href="/how-i-work"
-            className="group flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 border border-[#f5a62330] rounded-lg bg-[#0d0d0d] p-6 hover:border-[#f5a62360] hover:bg-[#111] transition-all duration-200"
-          >
-            <div className="flex-1">
-              <p className="text-[10px] font-semibold uppercase tracking-widest text-[#f5a623] mb-2">
-                Start here
-              </p>
-              <h2 className="text-lg font-bold text-[#fafafa] mb-2">How I Work</h2>
-              <p className="text-sm text-[#52525b] leading-relaxed max-w-2xl">
-                The complete methodology: understand the problem, spec before you build, break into epics and stories, build in parallel with worktrees, implement with Claude, test and ship clean. Plus the prompt engineering layer that ties it all together.
-              </p>
-            </div>
-            <div className="shrink-0 flex items-center gap-2 text-sm font-medium text-[#f5a623] group-hover:gap-3 transition-all">
-              Read →
-            </div>
-          </Link>
+        <div className="mx-auto max-w-7xl px-6 py-12">
+          <div className="flex items-center gap-3 mb-8">
+            <p className="text-[10px] font-semibold uppercase tracking-widest text-[#f5a623]">
+              The path
+            </p>
+            <div className="flex-1 h-px bg-[#1a1a1a]" />
+            <p className="text-[10px] text-[#3f3f46] font-mono">recommended sequence</p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {featuredPath.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="group relative flex flex-col border border-[#1a1a1a] rounded-lg bg-[#0d0d0d] p-5 hover:border-[#f5a62340] hover:bg-[#111] transition-all duration-200"
+              >
+                <span className="text-[10px] font-mono text-[#3f3f46] mb-3">{item.step}</span>
+                <h3 className="text-sm font-bold text-[#fafafa] mb-2">{item.label}</h3>
+                <p className="text-xs text-[#52525b] leading-relaxed flex-1">{item.description}</p>
+                <div className="mt-4 text-xs text-[#3f3f46] group-hover:text-[#f5a623] transition-colors">
+                  {item.cta} →
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Guides grouped */}
-      <section id="guides" className="mx-auto max-w-7xl px-6 py-16">
-        <div className="flex items-center justify-between mb-10">
-          <h2 className="text-xs font-semibold uppercase tracking-widest text-[#3f3f46]">Reference Guides</h2>
-          <span className="text-xs text-[#3f3f46] font-mono">16 guides</span>
+      {/* All guides — compact list */}
+      <section id="all-guides" className="mx-auto max-w-7xl px-6 py-14">
+        <div className="flex items-center gap-3 mb-8">
+          <p className="text-[10px] font-semibold uppercase tracking-widest text-[#3f3f46]">
+            All guides
+          </p>
+          <div className="flex-1 h-px bg-[#1a1a1a]" />
+          <Link href="/prompt-library" className="text-[10px] text-[#3f3f46] font-mono hover:text-[#f5a623] transition-colors">
+            Prompt Library →
+          </Link>
         </div>
 
-        <div className="flex flex-col gap-10">
-          {guideGroups.map((group) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {allGuides.map((group) => (
             <div key={group.label}>
-              <div className="flex items-center gap-3 mb-4">
-                <span className={`text-[10px] font-semibold uppercase tracking-widest ${tagColors[group.tag]}`}>
-                  {group.label}
-                </span>
-                <div className="flex-1 h-px bg-[#1a1a1a]" />
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-                {group.guides.map((guide) => (
+              <p className="text-[10px] font-semibold uppercase tracking-widest text-[#3f3f46] mb-3">
+                {group.label}
+              </p>
+              <div className="flex flex-col gap-1">
+                {group.links.map((link) => (
                   <Link
-                    key={guide.href}
-                    href={guide.href}
-                    className="group flex flex-col justify-between border border-[#1a1a1a] rounded-lg bg-[#0d0d0d] p-4 hover:border-[#f5a62340] hover:bg-[#111] transition-all duration-200"
+                    key={link.href}
+                    href={link.href}
+                    className="text-sm text-[#52525b] hover:text-[#fafafa] transition-colors py-0.5"
                   >
-                    <div>
-                      <h3 className="text-sm font-semibold text-[#fafafa] mb-2 leading-snug">{guide.label}</h3>
-                      <p className="text-xs text-[#52525b] leading-relaxed">{guide.description}</p>
-                    </div>
-                    <div className="mt-4 text-xs text-[#3f3f46] group-hover:text-[#f5a623] transition-colors">
-                      Read →
-                    </div>
+                    {link.label}
                   </Link>
                 ))}
               </div>

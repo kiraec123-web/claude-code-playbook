@@ -37,6 +37,7 @@ const guideGroups = [
       { href: "/testing", label: "Testing" },
       { href: "/debugging", label: "Debugging" },
       { href: "/code-review", label: "Code Review" },
+      { href: "/changelog-and-prs", label: "Changelog & PRs" },
     ],
   },
   {
