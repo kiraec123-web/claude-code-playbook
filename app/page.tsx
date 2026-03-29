@@ -1,98 +1,49 @@
 import Link from "next/link";
 
-const topics = [
+const guideGroups = [
   {
-    href: "/getting-started",
-    label: "Getting Started",
-    number: "01",
-    description: "CLAUDE.md, onboarding to existing codebases, navigating large repos.",
+    label: "Foundation",
     tag: "Foundation",
+    guides: [
+      { href: "/getting-started", label: "Getting Started", description: "CLAUDE.md, onboarding to codebases, navigating large repos." },
+      { href: "/prompting", label: "Prompting Patterns", description: "Constraints over goals, negative instructions, iteration." },
+      { href: "/memory-and-context", label: "Memory & Context", description: "How context works, session management, designing for amnesia." },
+    ],
   },
   {
-    href: "/prompting",
-    label: "Prompting Patterns",
-    number: "02",
-    description: "Constraints over goals, negative instructions, iterating with Claude.",
-    tag: "Core skill",
-  },
-  {
-    href: "/memory-and-context",
-    label: "Memory & Context",
-    number: "03",
-    description: "How context works, session management, designing for amnesia.",
-    tag: "Core skill",
-  },
-  {
-    href: "/agents-and-tools",
-    label: "Agents & Tools",
-    number: "04",
-    description: "Autonomy spectrum, slash commands, MCP tools, checkpoints.",
+    label: "Build",
     tag: "Advanced",
+    guides: [
+      { href: "/user-stories", label: "User Stories & Tickets", description: "Spec-first stories, epic breakdowns, acceptance criteria." },
+      { href: "/agents-and-tools", label: "Agents & Tools", description: "Autonomy spectrum, slash commands, MCP tools, checkpoints." },
+      { href: "/hooks", label: "Hooks", description: "Deterministic lifecycle controls: block ops, auto-format, inject context." },
+      { href: "/plan-mode", label: "Plan Mode", description: "Shift+Tab planning, RIPER workflow, spec-driven development." },
+    ],
   },
   {
-    href: "/testing",
-    label: "Testing",
-    number: "05",
-    description: "TDD with Claude, failure modes, mutation testing, multi-pass review.",
+    label: "Quality",
     tag: "Quality",
+    guides: [
+      { href: "/testing", label: "Testing", description: "TDD with Claude, failure modes, mutation testing, multi-pass review." },
+      { href: "/debugging", label: "Debugging", description: "Reproducible reports, fix loops, preventing test-cheating." },
+      { href: "/code-review", label: "Code Review & QA", description: "Claude as reviewer, diff discipline, structured QA pass." },
+    ],
   },
   {
-    href: "/debugging",
-    label: "Debugging",
-    number: "06",
-    description: "Reproducible reports, fix loops, preventing test-cheating.",
-    tag: "Quality",
-  },
-  {
-    href: "/code-review",
-    label: "Code Review & QA",
-    number: "07",
-    description: "Claude as reviewer, diff discipline, structured QA pass.",
-    tag: "Quality",
-  },
-  {
-    href: "/security",
-    label: "Security",
-    number: "08",
-    description: "Secrets hygiene, bash permissions, prompt injection, credentials.",
+    label: "Config",
     tag: "Safety",
-  },
-  {
-    href: "/user-stories",
-    label: "User Stories & Tickets",
-    number: "09",
-    description: "Spec-first story writing, epic breakdowns, acceptance criteria, INVEST review.",
-    tag: "Advanced",
-  },
-  {
-    href: "/hooks",
-    label: "Hooks",
-    number: "10",
-    description: "Deterministic lifecycle controls: block commands, auto-format, inject context.",
-    tag: "Advanced",
-  },
-  {
-    href: "/plan-mode",
-    label: "Plan Mode",
-    number: "11",
-    description: "Shift+Tab planning, RIPER workflow, and spec-driven development.",
-    tag: "Advanced",
-  },
-  {
-    href: "/settings-and-shortcuts",
-    label: "Settings & Shortcuts",
-    number: "12",
-    description: "Settings hierarchy, Esc rewind, /clear discipline, git worktrees.",
-    tag: "Advanced",
+    guides: [
+      { href: "/settings-and-shortcuts", label: "Settings & Shortcuts", description: "Settings hierarchy, Esc rewind, /clear discipline, worktrees." },
+      { href: "/security", label: "Security", description: "Secrets hygiene, bash permissions, prompt injection, credentials." },
+    ],
   },
 ];
 
 const tagColors: Record<string, string> = {
-  Foundation: "text-[#60a5fa] bg-[#3b82f610] border-[#3b82f622]",
-  "Core skill": "text-[#a78bfa] bg-[#8b5cf610] border-[#8b5cf622]",
-  Advanced: "text-[#f5a623] bg-[#f5a62310] border-[#f5a62322]",
-  Quality: "text-[#4ade80] bg-[#22c55e10] border-[#22c55e22]",
-  Safety: "text-[#f87171] bg-[#ef444410] border-[#ef444422]",
+  Foundation: "text-[#60a5fa]",
+  Advanced: "text-[#f5a623]",
+  Quality: "text-[#4ade80]",
+  Safety: "text-[#f87171]",
 };
 
 export default function Home() {
@@ -113,90 +64,89 @@ export default function Home() {
         <div className="relative mx-auto max-w-7xl px-6 pt-24 pb-28">
           <div className="inline-flex items-center gap-2 border border-[#222] rounded-full px-3 py-1 mb-8">
             <div className="w-1.5 h-1.5 rounded-full bg-[#f5a623]" />
-            <span className="text-xs text-[#71717a] font-mono">Claude Code Best Practices</span>
+            <span className="text-xs text-[#71717a] font-mono">For engineers, FDEs & PMs</span>
           </div>
 
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tighter leading-[0.95] text-[#fafafa] max-w-3xl">
-            Work with Claude Code{" "}
-            <span className="text-[#f5a623]">without the guesswork.</span>
+            Ship products with{" "}
+            <span className="text-[#f5a623]">Claude Code.</span>
           </h1>
 
           <p className="mt-6 text-lg text-[#71717a] max-w-xl leading-relaxed">
-            Eleven focused guides on prompting, hooks, plan mode, testing, debugging, security, and more — so every session produces work you can ship.
+            The full methodology — from understanding a problem to shipping clean code. Structured thinking, prompt engineering, and the workflow patterns that actually work.
           </p>
 
           <div className="mt-10 flex items-center gap-4">
             <Link
-              href="/getting-started"
+              href="/how-i-work"
               className="inline-flex items-center gap-2 bg-[#f5a623] text-[#0a0a0a] font-semibold text-sm px-5 py-2.5 rounded-md hover:bg-[#e09520] transition-colors"
             >
-              Start reading →
+              How I Work →
             </Link>
-            <a href="#topics" className="text-sm text-[#71717a] hover:text-[#fafafa] transition-colors">
-              Browse all topics
+            <a href="#guides" className="text-sm text-[#71717a] hover:text-[#fafafa] transition-colors">
+              Browse guides
             </a>
           </div>
         </div>
       </section>
 
-      {/* Topic grid */}
-      <section id="topics" className="mx-auto max-w-7xl px-6 py-16">
-        <div className="flex items-center justify-between mb-10">
-          <h2 className="text-xs font-semibold uppercase tracking-widest text-[#3f3f46]">All Topics</h2>
-          <span className="text-xs text-[#3f3f46] font-mono">12 guides</span>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-          {topics.map((topic) => (
-            <Link
-              key={topic.href}
-              href={topic.href}
-              className="group relative flex flex-col justify-between border border-[#1a1a1a] rounded-lg bg-[#0d0d0d] p-5 hover:border-[#f5a62340] hover:bg-[#111] transition-all duration-200"
-            >
-              <div>
-                <div className="flex items-start justify-between mb-4">
-                  <span className="font-mono text-xs text-[#2a2a2a] group-hover:text-[#3a3a3a] transition-colors">
-                    {topic.number}
-                  </span>
-                  <span className={`text-[10px] font-semibold border rounded-full px-2 py-0.5 ${tagColors[topic.tag]}`}>
-                    {topic.tag}
-                  </span>
-                </div>
-                <h3 className="text-sm font-semibold text-[#fafafa] mb-2 leading-snug">{topic.label}</h3>
-                <p className="text-xs text-[#52525b] leading-relaxed">{topic.description}</p>
-              </div>
-              <div className="mt-6 text-xs text-[#3f3f46] group-hover:text-[#f5a623] transition-colors">
-                Read guide →
-              </div>
-            </Link>
-          ))}
+      {/* How I Work feature card */}
+      <section className="border-b border-[#1a1a1a]">
+        <div className="mx-auto max-w-7xl px-6 py-10">
+          <Link
+            href="/how-i-work"
+            className="group flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 border border-[#f5a62330] rounded-lg bg-[#0d0d0d] p-6 hover:border-[#f5a62360] hover:bg-[#111] transition-all duration-200"
+          >
+            <div className="flex-1">
+              <p className="text-[10px] font-semibold uppercase tracking-widest text-[#f5a623] mb-2">
+                Start here
+              </p>
+              <h2 className="text-lg font-bold text-[#fafafa] mb-2">How I Work</h2>
+              <p className="text-sm text-[#52525b] leading-relaxed max-w-2xl">
+                The complete methodology: understand the problem, spec before you build, break into epics and stories, build in parallel with worktrees, implement with Claude, test and ship clean. Plus the prompt engineering layer that ties it all together.
+              </p>
+            </div>
+            <div className="shrink-0 flex items-center gap-2 text-sm font-medium text-[#f5a623] group-hover:gap-3 transition-all">
+              Read →
+            </div>
+          </Link>
         </div>
       </section>
 
-      {/* Bottom strip */}
-      <section className="border-t border-[#111] bg-[#0d0d0d]">
-        <div className="mx-auto max-w-7xl px-6 py-12 grid grid-cols-1 sm:grid-cols-3 gap-8">
-          {[
-            {
-              label: "Start here",
-              text: "New to Claude Code? Begin with Getting Started — CLAUDE.md alone will transform your sessions.",
-              href: "/getting-started",
-            },
-            {
-              label: "Most impactful",
-              text: "Prompting Patterns is the highest-leverage guide. Better prompts, better output, every time.",
-              href: "/prompting",
-            },
-            {
-              label: "Often overlooked",
-              text: "Security covers the risks most users don't think about until something goes wrong.",
-              href: "/security",
-            },
-          ].map((item) => (
-            <Link key={item.href} href={item.href} className="group">
-              <p className="text-[10px] font-semibold uppercase tracking-widest text-[#f5a623] mb-2">{item.label}</p>
-              <p className="text-sm text-[#52525b] leading-relaxed group-hover:text-[#71717a] transition-colors">{item.text}</p>
-            </Link>
+      {/* Guides grouped */}
+      <section id="guides" className="mx-auto max-w-7xl px-6 py-16">
+        <div className="flex items-center justify-between mb-10">
+          <h2 className="text-xs font-semibold uppercase tracking-widest text-[#3f3f46]">Reference Guides</h2>
+          <span className="text-xs text-[#3f3f46] font-mono">12 guides</span>
+        </div>
+
+        <div className="flex flex-col gap-10">
+          {guideGroups.map((group) => (
+            <div key={group.label}>
+              <div className="flex items-center gap-3 mb-4">
+                <span className={`text-[10px] font-semibold uppercase tracking-widest ${tagColors[group.tag]}`}>
+                  {group.label}
+                </span>
+                <div className="flex-1 h-px bg-[#1a1a1a]" />
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                {group.guides.map((guide) => (
+                  <Link
+                    key={guide.href}
+                    href={guide.href}
+                    className="group flex flex-col justify-between border border-[#1a1a1a] rounded-lg bg-[#0d0d0d] p-4 hover:border-[#f5a62340] hover:bg-[#111] transition-all duration-200"
+                  >
+                    <div>
+                      <h3 className="text-sm font-semibold text-[#fafafa] mb-2 leading-snug">{guide.label}</h3>
+                      <p className="text-xs text-[#52525b] leading-relaxed">{guide.description}</p>
+                    </div>
+                    <div className="mt-4 text-xs text-[#3f3f46] group-hover:text-[#f5a623] transition-colors">
+                      Read →
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </section>
