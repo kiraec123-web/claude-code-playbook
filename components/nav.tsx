@@ -9,6 +9,7 @@ const links = [
   { href: "/prompting", label: "Prompting" },
   { href: "/memory-and-context", label: "Memory" },
   { href: "/agents-and-tools", label: "Agents" },
+  { href: "/user-stories", label: "User Stories" },
   { href: "/hooks", label: "Hooks" },
   { href: "/plan-mode", label: "Plan Mode" },
   { href: "/settings-and-shortcuts", label: "Settings" },
