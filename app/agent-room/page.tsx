@@ -1,5 +1,6 @@
 import { ContentLayout } from "@/components/content-layout";
 import { Callout } from "@/components/callout";
+import { AgentRoomDiagram } from "@/components/agent-room-diagram";
 
 const sections = [
   { id: "the-concept", title: "The Concept" },
@@ -44,6 +45,8 @@ export default function AgentRoom() {
         You run them before you build. Their job is to surface everything that would have
         become a problem mid-sprint, a bug at launch, or a post-mortem conversation.
       </p>
+
+      <AgentRoomDiagram />
 
       <Callout variant="key" title="Why this works">
         A single Claude session tries to be helpful — it leans toward yes, toward completion,
