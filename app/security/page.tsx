@@ -20,7 +20,7 @@ export default function Security() {
       title="Security"
       description="Claude Code operates with significant access — to your filesystem, your shell, and potentially external services. A few security habits protect you from the most common failure modes."
       sections={sections}
-      prev={{ href: "/code-review", label: "Code Review & QA" }}
+      prev={{ href: "/changelog-and-prs", label: "Changelog & PRs" }}
     >
       <h2 id="secrets">Never Put Secrets in CLAUDE.md</h2>
       <p>

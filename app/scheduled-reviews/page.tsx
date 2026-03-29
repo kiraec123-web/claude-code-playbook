@@ -23,7 +23,7 @@ export default function ScheduledReviews() {
       description="The most consistent engineering teams aren't just using Claude to write code — they've wired it into their daily rhythm. Morning standups, end-of-day summaries, security reviews, user feedback sessions, and CEO-level sense checks, all running automatically."
       sections={sections}
       prev={{ href: "/sprint-efficiency", label: "10x Your Sprint" }}
-      next={{ href: "/hooks", label: "Hooks" }}
+      next={{ href: "/prompt-library", label: "Prompt Library" }}
     >
       <h2 id="the-idea">The Idea</h2>
       <p>

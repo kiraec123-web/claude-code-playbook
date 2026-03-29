@@ -22,8 +22,8 @@ export default function AgentsAndTools() {
       title="Agents & Tools"
       description="Claude Code can operate across a spectrum — from single-turn code generation to fully autonomous multi-step agents. Understanding when to use each mode, and how to set up guardrails, is what separates productive sessions from ones that create more work than they save."
       sections={sections}
-      prev={{ href: "/memory-and-context", label: "Memory & Context" }}
-      next={{ href: "/testing", label: "Testing" }}
+      prev={{ href: "/user-stories", label: "User Stories & Tickets" }}
+      next={{ href: "/hooks", label: "Hooks" }}
     >
       <h2 id="autonomy-spectrum">The Autonomy Spectrum</h2>
       <p>Think of Claude Code&apos;s operating modes on a spectrum:</p>

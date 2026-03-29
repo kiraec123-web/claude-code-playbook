@@ -23,8 +23,8 @@ export default function UserStories() {
       title="Writing User Stories & Tickets"
       description="Claude can go from a vague feature request to a well-structured Jira ticket with acceptance criteria, edge cases, and a definition of done — but only if you give it the right input. The spec-first principle applies here just as much as it does to code."
       sections={sections}
-      prev={{ href: "/settings-and-shortcuts", label: "Settings & Shortcuts" }}
-      next={{ href: "/security", label: "Security" }}
+      prev={{ href: "/agent-room", label: "The Agent Room" }}
+      next={{ href: "/agents-and-tools", label: "Agents & Tools" }}
     >
       <h2 id="the-problem">The Problem with AI-Generated Tickets</h2>
       <p>

@@ -22,7 +22,7 @@ export default function SettingsAndShortcuts() {
       description="Claude Code has a settings system, a keyboard shortcut layer, and a set of power-user patterns that most users never discover. This guide covers all of them."
       sections={sections}
       prev={{ href: "/plan-mode", label: "Plan Mode" }}
-      next={{ href: "/security", label: "Security" }}
+      next={{ href: "/git-worktrees", label: "Git Worktrees" }}
     >
       <h2 id="settings-hierarchy">Settings Hierarchy</h2>
       <p>

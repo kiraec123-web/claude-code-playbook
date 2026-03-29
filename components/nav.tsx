@@ -16,7 +16,8 @@ const guideGroups = [
     label: "Foundation",
     color: "#60a5fa",
     links: [
-      { href: "/getting-started", label: "Getting Started", desc: "CLAUDE.md, onboarding codebases, navigating large repos." },
+      { href: "/getting-started", label: "Getting Started", desc: "Onboarding Claude to a codebase, navigating large repos." },
+      { href: "/claude-md", label: "CLAUDE.md", desc: "The project briefing file — what it is, what goes in it, team usage." },
       { href: "/prompting", label: "Prompting Patterns", desc: "Constraints over goals, negative instructions, iteration." },
       { href: "/memory-and-context", label: "Memory & Context", desc: "Session management, designing for amnesia." },
     ],
@@ -32,6 +33,7 @@ const guideGroups = [
       { href: "/agents-and-tools", label: "Agents & Tools", desc: "Autonomy spectrum, slash commands, MCP tools, checkpoints." },
       { href: "/hooks", label: "Hooks", desc: "Deterministic lifecycle controls: block ops, inject context." },
       { href: "/plan-mode", label: "Plan Mode", desc: "Shift+Tab planning, RIPER workflow, spec-driven development." },
+      { href: "/git-worktrees", label: "Git Worktrees", desc: "Parallel Claude sessions — each on its own branch and context." },
     ],
   },
   {

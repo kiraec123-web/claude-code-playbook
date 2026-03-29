@@ -23,7 +23,7 @@ export default function PromptLibrary() {
       description="Copy-paste prompts for every stage of a sprint. These are the ones that reliably produce good output — refined through use, not written as examples. Start here, add your own, commit them to .claude/commands/."
       sections={sections}
       prev={{ href: "/scheduled-reviews", label: "Scheduled Reviews" }}
-      next={{ href: "/getting-started", label: "Getting Started" }}
+      next={{ href: "/testing", label: "Testing" }}
     >
       <Callout variant="tip" title="Make these yours">
         Every prompt here is a starting point. The best version will have your product context,

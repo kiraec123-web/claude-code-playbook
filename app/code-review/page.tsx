@@ -22,7 +22,7 @@ export default function CodeReview() {
       description="Claude Code is typically used to write code — but it's equally useful as a reviewer. Used well, it can surface edge cases, security issues, and architectural problems before they reach production."
       sections={sections}
       prev={{ href: "/debugging", label: "Debugging" }}
-      next={{ href: "/security", label: "Security" }}
+      next={{ href: "/changelog-and-prs", label: "Changelog & PRs" }}
     >
       <h2 id="claude-as-reviewer">Claude as Reviewer, Not Just Writer</h2>
       <p>Ask Claude to critique code rather than produce it. This is a different mode and produces different output.</p>

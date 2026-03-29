@@ -20,7 +20,7 @@ export default function MemoryAndContext() {
       description="Claude Code has no persistent memory between sessions outside of what you explicitly provide. Understanding where context lives — and where it doesn't — is foundational to working effectively."
       sections={sections}
       prev={{ href: "/prompting", label: "Prompting Patterns" }}
-      next={{ href: "/agents-and-tools", label: "Agents & Tools" }}
+      next={{ href: "/agent-room", label: "The Agent Room" }}
     >
       <h2 id="three-layers">The Three Layers of Context</h2>
 

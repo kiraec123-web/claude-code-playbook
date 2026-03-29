@@ -25,7 +25,7 @@ export default function AgentRoom() {
       title="The Agent Room"
       description="Before you build anything, bring a room full of specialists into the conversation. A critical agent that finds holes. A user agent that simulates confusion. A designer, an architect, a PM. Each one a Claude session with a specific role, asking the question their discipline demands."
       sections={sections}
-      prev={{ href: "/how-i-work", label: "How I Work" }}
+      prev={{ href: "/memory-and-context", label: "Memory & Context" }}
       next={{ href: "/user-stories", label: "User Stories" }}
     >
       <h2 id="the-concept">The Concept</h2>

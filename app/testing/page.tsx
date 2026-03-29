@@ -22,7 +22,7 @@ export default function Testing() {
       title="Testing"
       description="Tests are where the 'looks good to me' failure mode is most costly. A passing test suite is not the same as a useful test suite — and Claude won't always know the difference unless you set the right conditions."
       sections={sections}
-      prev={{ href: "/agents-and-tools", label: "Agents & Tools" }}
+      prev={{ href: "/prompt-library", label: "Prompt Library" }}
       next={{ href: "/debugging", label: "Debugging" }}
     >
       <h2 id="tdd">Start with TDD: Write Tests Before Implementation</h2>

@@ -24,7 +24,7 @@ export default function Prompting() {
       title="Prompting Patterns"
       description="The quality of Claude Code's output is tightly coupled to the quality of what you ask for. These patterns consistently improve results across different types of tasks."
       sections={sections}
-      prev={{ href: "/getting-started", label: "Getting Started" }}
+      prev={{ href: "/claude-md", label: "CLAUDE.md" }}
       next={{ href: "/memory-and-context", label: "Memory & Context" }}
     >
       <h2 id="constraints">Be Specific About Constraints, Not Just Goals</h2>

@@ -17,7 +17,7 @@ export default function GettingStarted() {
       title="Getting Started"
       description="How to onboard Claude Code to a project — whether it's a fresh repo or a large existing codebase — and set up the foundation for every session that follows."
       sections={sections}
-      next={{ href: "/prompting", label: "Prompting Patterns" }}
+      next={{ href: "/claude-md", label: "CLAUDE.md" }}
     >
       <h2 id="claude-md">CLAUDE.md: Your Project Briefing</h2>
       <p>
