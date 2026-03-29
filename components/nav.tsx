@@ -6,6 +6,12 @@ import { useState } from "react";
 
 const guideGroups = [
   {
+    label: "Reference",
+    links: [
+      { href: "/prompt-library", label: "Prompt Library" },
+    ],
+  },
+  {
     label: "Foundation",
     links: [
       { href: "/getting-started", label: "Getting Started" },
