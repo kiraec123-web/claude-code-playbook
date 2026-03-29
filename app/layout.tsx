@@ -20,6 +20,10 @@ export const metadata: Metadata = {
   },
   description:
     "Best practices for working with Claude Code — from first session to production agentic workflows.",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+  },
   openGraph: {
     title: "Claude Code Playbook",
     description:
