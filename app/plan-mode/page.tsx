@@ -59,14 +59,8 @@ export default function PlanMode() {
       </p>
 
       <Comparison
-        weak={{
-          label: "Direct implementation",
-          code: `"Add pagination to the users table."\n\n// Claude starts editing 4 files immediately.\n// Page 3 of the approach is wrong, but you\n// don't know until all 4 files are changed.`,
-        }}
-        strong={{
-          label: "Plan Mode first",
-          code: `[Shift+Tab]\n"Add pagination to the users table."\n\n// Claude outlines: cursor-based vs offset,\n// which files change, what the response\n// shape looks like. You catch the approach\n// mismatch before any code is written.`,
-        }}
+        weak={`Add pagination to the users table. — Claude starts editing 4 files immediately. Page 3 of the approach is wrong, but you don't know until all 4 files are changed.`}
+        strong={`[Shift+Tab] Add pagination to the users table. — Claude outlines cursor-based vs offset, which files change, what the response shape looks like. You catch the approach mismatch before any code is written.`}
       />
 
       <hr />
@@ -163,14 +157,8 @@ export default function PlanMode() {
       </ul>
 
       <Comparison
-        weak={{
-          label: "No spec",
-          code: `"Add a deposit endpoint to the accounts API."\n\n// Claude makes 12 decisions you didn't\n// know you needed to make: what to return\n// on success, error codes, whether to\n// validate the amount, what happens if the\n// account is closed...`,
-        }}
-        strong={{
-          label: "With spec",
-          code: `"Implement POST /account/deposit:\n- Input: { accountId: string, amount: number }\n- Returns 200 + { balance: number } on success\n- Returns 400 if amount <= 0\n- Returns 404 if account not found\n- Returns 409 if account is closed\n- Amount must be in cents (integer only)\n- Does NOT handle currency conversion"`,
-        }}
+        weak={`Add a deposit endpoint to the accounts API. — Claude makes 12 decisions you didn't know you needed to make: success return shape, error codes, amount validation, what happens if the account is closed...`}
+        strong={`Implement POST /account/deposit: Input { accountId, amount (cents) }. Returns 200 + { balance } on success, 400 if amount ≤ 0, 404 if not found, 409 if closed. Does NOT handle currency conversion.`}
       />
 
       <h3>Spec as CLAUDE.md section</h3>
