@@ -57,6 +57,27 @@ const topics = [
     description: "Secrets hygiene, bash permissions, prompt injection, credentials.",
     tag: "Safety",
   },
+  {
+    href: "/hooks",
+    label: "Hooks",
+    number: "09",
+    description: "Deterministic lifecycle controls: block commands, auto-format, inject context.",
+    tag: "Advanced",
+  },
+  {
+    href: "/plan-mode",
+    label: "Plan Mode",
+    number: "10",
+    description: "Shift+Tab planning, RIPER workflow, and spec-driven development.",
+    tag: "Advanced",
+  },
+  {
+    href: "/settings-and-shortcuts",
+    label: "Settings & Shortcuts",
+    number: "11",
+    description: "Settings hierarchy, Esc rewind, /clear discipline, git worktrees.",
+    tag: "Advanced",
+  },
 ];
 
 const tagColors: Record<string, string> = {
@@ -94,7 +115,7 @@ export default function Home() {
           </h1>
 
           <p className="mt-6 text-lg text-[#71717a] max-w-xl leading-relaxed">
-            Eight focused guides on prompting, agents, testing, debugging, security, and more — so every session produces work you can ship.
+            Eleven focused guides on prompting, hooks, plan mode, testing, debugging, security, and more — so every session produces work you can ship.
           </p>
 
           <div className="mt-10 flex items-center gap-4">
@@ -115,7 +136,7 @@ export default function Home() {
       <section id="topics" className="mx-auto max-w-7xl px-6 py-16">
         <div className="flex items-center justify-between mb-10">
           <h2 className="text-xs font-semibold uppercase tracking-widest text-[#3f3f46]">All Topics</h2>
-          <span className="text-xs text-[#3f3f46] font-mono">8 guides</span>
+          <span className="text-xs text-[#3f3f46] font-mono">11 guides</span>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
