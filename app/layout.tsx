@@ -14,9 +14,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Claude Code Playbook",
+  title: {
+    default: "Claude Code Playbook",
+    template: "%s — Claude Code Playbook",
+  },
   description:
     "Best practices for working with Claude Code — from first session to production agentic workflows.",
+  openGraph: {
+    title: "Claude Code Playbook",
+    description:
+      "Best practices for working with Claude Code — from first session to production agentic workflows.",
+    siteName: "Claude Code Playbook",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Claude Code Playbook",
+    description:
+      "Best practices for working with Claude Code — from first session to production agentic workflows.",
+  },
 };
 
 export default function RootLayout({
