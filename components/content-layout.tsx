@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ReactNode } from "react";
 import { CopyButtons } from "@/components/copy-buttons";
+import { categoryColors, categoryBg, type Category } from "@/lib/guides";
 
 interface Section {
   id: string;
@@ -11,6 +12,8 @@ interface ContentLayoutProps {
   title: string;
   description: string;
   sections: Section[];
+  category?: Category;
+  position?: { current: number; total: number };
   prev?: { href: string; label: string };
   next?: { href: string; label: string };
   children: ReactNode;
@@ -20,12 +23,22 @@ export function ContentLayout({
   title,
   description,
   sections,
+  category,
+  position,
   prev,
   next,
   children,
 }: ContentLayoutProps) {
+  const catColor = category ? categoryColors[category] : null;
+  const catBg = category ? categoryBg[category] : null;
+
   return (
     <div className="flex-1">
+      {/* Category accent bar */}
+      {catColor && (
+        <div className="h-[2px] w-full" style={{ backgroundColor: catColor }} />
+      )}
+
       {/* Page header */}
       <div className="border-b border-[#1a1a1a] bg-[#0d0d0d] px-6 py-12 relative overflow-hidden">
         <div
@@ -40,12 +53,32 @@ export function ContentLayout({
           </span>
         </div>
         <div className="mx-auto max-w-7xl relative">
-          <Link
-            href="/"
-            className="text-xs text-[#71717a] hover:text-[#a1a1aa] transition-colors mb-4 inline-flex items-center gap-1"
-          >
-            ← All topics
-          </Link>
+          {/* Breadcrumb row */}
+          <div className="flex items-center gap-3 mb-4">
+            <Link
+              href="/"
+              className="text-xs text-[#52525b] hover:text-[#a1a1aa] transition-colors inline-flex items-center gap-1"
+            >
+              ← Playbook
+            </Link>
+            {category && (
+              <>
+                <span className="text-[#2a2a2a] text-xs">/</span>
+                <span
+                  className="text-[10px] font-semibold uppercase tracking-widest px-2 py-0.5 rounded-full"
+                  style={{ color: catColor!, backgroundColor: catBg! }}
+                >
+                  {category}
+                </span>
+              </>
+            )}
+            {position && (
+              <span className="ml-auto text-[10px] font-mono text-[#3f3f46]">
+                {position.current} / {position.total}
+              </span>
+            )}
+          </div>
+
           <h1 className="text-3xl font-bold tracking-tight text-[#fafafa] mt-2">
             {title}
           </h1>

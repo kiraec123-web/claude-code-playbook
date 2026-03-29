@@ -20,6 +20,8 @@ export default function SettingsAndShortcuts() {
     <ContentLayout
       title="Settings, Shortcuts & Power User Config"
       description="Claude Code has a settings system, a keyboard shortcut layer, and a set of power-user patterns that most users never discover. This guide covers all of them."
+      category="Config"
+      position={{ current: 10, total: 19 }}
       sections={sections}
       prev={{ href: "/plan-mode", label: "Plan Mode" }}
       next={{ href: "/git-worktrees", label: "Git Worktrees" }}

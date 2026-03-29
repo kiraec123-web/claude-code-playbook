@@ -21,6 +21,8 @@ export default function Debugging() {
     <ContentLayout
       title="Debugging"
       description="Handing a bug to Claude Code without preparation usually produces mediocre results. The more legible the bug is when Claude sees it, the better the fix — and the easier it is to verify."
+      category="Quality"
+      position={{ current: 16, total: 19 }}
       sections={sections}
       prev={{ href: "/testing", label: "Testing" }}
       next={{ href: "/code-review", label: "Code Review & QA" }}

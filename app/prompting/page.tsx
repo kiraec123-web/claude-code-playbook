@@ -23,6 +23,8 @@ export default function Prompting() {
     <ContentLayout
       title="Prompting Patterns"
       description="The quality of Claude Code's output is tightly coupled to the quality of what you ask for. These patterns consistently improve results across different types of tasks."
+      category="Foundation"
+      position={{ current: 3, total: 19 }}
       sections={sections}
       prev={{ href: "/claude-md", label: "CLAUDE.md" }}
       next={{ href: "/memory-and-context", label: "Memory & Context" }}

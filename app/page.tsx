@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { guides, categoryColors, categoryBg, type Category } from "@/lib/guides";
 
 const featuredPath = [
   {
@@ -31,6 +32,14 @@ const featuredPath = [
   },
 ];
 
+const categoryOrder: Category[] = ["Foundation", "Build", "Quality", "Config", "Reference"];
+
+const groupedGuides = categoryOrder.map((cat) => ({
+  category: cat,
+  color: categoryColors[cat],
+  bg: categoryBg[cat],
+  guides: guides.filter((g) => g.category === cat),
+}));
 
 export default function Home() {
   return (
@@ -100,6 +109,70 @@ export default function Home() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* All guides — color-coded by category */}
+      <section className="mx-auto max-w-7xl px-6 py-14">
+        <div className="flex items-center gap-3 mb-10">
+          <p className="text-[10px] font-semibold uppercase tracking-widest text-[#3f3f46]">
+            All guides
+          </p>
+          <div className="flex-1 h-px bg-[#1a1a1a]" />
+          <span className="text-[10px] font-mono text-[#2a2a2a]">{guides.length} guides</span>
+        </div>
+
+        <div className="flex flex-col gap-2">
+          {groupedGuides.map(({ category, color, bg, guides: catGuides }) => (
+            <div
+              key={category}
+              className="rounded-lg border border-[#1a1a1a] overflow-hidden"
+            >
+              {/* Category header */}
+              <div
+                className="flex items-center gap-2 px-4 py-2.5"
+                style={{ backgroundColor: bg }}
+              >
+                <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: color }} />
+                <span
+                  className="text-[10px] font-semibold uppercase tracking-widest"
+                  style={{ color }}
+                >
+                  {category}
+                </span>
+                <span className="text-[10px] font-mono ml-auto" style={{ color, opacity: 0.5 }}>
+                  {catGuides.length}
+                </span>
+              </div>
+
+              {/* Guide links */}
+              <div className="flex flex-wrap gap-px bg-[#111]">
+                {catGuides.map((guide, i) => (
+                  <Link
+                    key={guide.href}
+                    href={guide.href}
+                    className="group flex items-center gap-2 bg-[#0d0d0d] px-4 py-3 hover:bg-[#111] transition-colors flex-1 min-w-[200px]"
+                  >
+                    <span
+                      className="text-[10px] font-mono shrink-0"
+                      style={{ color, opacity: 0.4 }}
+                    >
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="text-xs text-[#71717a] group-hover:text-[#fafafa] transition-colors truncate">
+                      {guide.label}
+                    </span>
+                    <span
+                      className="ml-auto text-[10px] opacity-0 group-hover:opacity-100 transition-opacity shrink-0"
+                      style={{ color }}
+                    >
+                      →
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

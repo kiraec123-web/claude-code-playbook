@@ -19,6 +19,8 @@ export default function Security() {
     <ContentLayout
       title="Security"
       description="Claude Code operates with significant access — to your filesystem, your shell, and potentially external services. A few security habits protect you from the most common failure modes."
+      category="Config"
+      position={{ current: 19, total: 19 }}
       sections={sections}
       prev={{ href: "/changelog-and-prs", label: "Changelog & PRs" }}
     >

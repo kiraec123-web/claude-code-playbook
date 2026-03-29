@@ -21,6 +21,8 @@ export default function ClaudeMd() {
     <ContentLayout
       title="CLAUDE.md"
       description="The project briefing file Claude reads before every session. How to write it, maintain it, and get maximum leverage from it."
+      category="Foundation"
+      position={{ current: 2, total: 19 }}
       sections={sections}
       prev={{ href: "/getting-started", label: "Getting Started" }}
       next={{ href: "/prompting", label: "Prompting Patterns" }}

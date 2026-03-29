@@ -22,6 +22,8 @@ export default function UserStories() {
     <ContentLayout
       title="Writing User Stories & Tickets"
       description="Claude can go from a vague feature request to a well-structured Jira ticket with acceptance criteria, edge cases, and a definition of done — but only if you give it the right input. The spec-first principle applies here just as much as it does to code."
+      category="Build"
+      position={{ current: 6, total: 19 }}
       sections={sections}
       prev={{ href: "/agent-room", label: "The Agent Room" }}
       next={{ href: "/agents-and-tools", label: "Agents & Tools" }}

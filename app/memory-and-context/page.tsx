@@ -18,6 +18,8 @@ export default function MemoryAndContext() {
     <ContentLayout
       title="Memory & Context"
       description="Claude Code has no persistent memory between sessions outside of what you explicitly provide. Understanding where context lives — and where it doesn't — is foundational to working effectively."
+      category="Foundation"
+      position={{ current: 4, total: 19 }}
       sections={sections}
       prev={{ href: "/prompting", label: "Prompting Patterns" }}
       next={{ href: "/agent-room", label: "The Agent Room" }}

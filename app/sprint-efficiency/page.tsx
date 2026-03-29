@@ -24,6 +24,8 @@ export default function SprintEfficiency() {
     <ContentLayout
       title="10x Your Sprint"
       description="The engineers who ship dramatically more with Claude Code aren't better at prompting. They think differently about where time gets lost, what Claude is actually good at, and how to structure a sprint so there's nothing to unblock."
+      category="Build"
+      position={{ current: 12, total: 19 }}
       sections={sections}
       prev={{ href: "/git-worktrees", label: "Git Worktrees" }}
       next={{ href: "/scheduled-reviews", label: "Scheduled Reviews" }}

@@ -21,6 +21,8 @@ export default function PromptLibrary() {
     <ContentLayout
       title="Prompt Library"
       description="Copy-paste prompts for every stage of a sprint. These are the ones that reliably produce good output — refined through use, not written as examples. Start here, add your own, commit them to .claude/commands/."
+      category="Reference"
+      position={{ current: 14, total: 19 }}
       sections={sections}
       prev={{ href: "/scheduled-reviews", label: "Scheduled Reviews" }}
       next={{ href: "/testing", label: "Testing" }}

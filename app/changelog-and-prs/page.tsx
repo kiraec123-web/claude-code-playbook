@@ -20,6 +20,8 @@ export default function ChangelogAndPRs() {
     <ContentLayout
       title="Changelog & PR Documentation"
       description="Good documentation isn't what you write after the sprint — it's what makes the sprint reviewable, the PR mergeable, and the release understandable. Claude makes all of this fast enough that there's no excuse to skip it."
+      category="Quality"
+      position={{ current: 18, total: 19 }}
       sections={sections}
       prev={{ href: "/code-review", label: "Code Review" }}
       next={{ href: "/security", label: "Security" }}

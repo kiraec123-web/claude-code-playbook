@@ -21,6 +21,8 @@ export default function Testing() {
     <ContentLayout
       title="Testing"
       description="Tests are where the 'looks good to me' failure mode is most costly. A passing test suite is not the same as a useful test suite — and Claude won't always know the difference unless you set the right conditions."
+      category="Quality"
+      position={{ current: 15, total: 19 }}
       sections={sections}
       prev={{ href: "/prompt-library", label: "Prompt Library" }}
       next={{ href: "/debugging", label: "Debugging" }}

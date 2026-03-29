@@ -20,6 +20,8 @@ export default function PlanMode() {
     <ContentLayout
       title="Plan Mode & Spec-Driven Development"
       description="The most common mistake when using Claude Code is jumping straight to implementation. Plan Mode and spec-driven workflows fix that — they front-load the thinking so execution is clean and deliberate."
+      category="Build"
+      position={{ current: 9, total: 19 }}
       sections={sections}
       prev={{ href: "/hooks", label: "Hooks" }}
       next={{ href: "/settings-and-shortcuts", label: "Settings & Shortcuts" }}

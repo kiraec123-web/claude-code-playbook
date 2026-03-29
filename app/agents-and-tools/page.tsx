@@ -21,6 +21,8 @@ export default function AgentsAndTools() {
     <ContentLayout
       title="Agents & Tools"
       description="Claude Code can operate across a spectrum — from single-turn code generation to fully autonomous multi-step agents. Understanding when to use each mode, and how to set up guardrails, is what separates productive sessions from ones that create more work than they save."
+      category="Build"
+      position={{ current: 7, total: 19 }}
       sections={sections}
       prev={{ href: "/user-stories", label: "User Stories & Tickets" }}
       next={{ href: "/hooks", label: "Hooks" }}

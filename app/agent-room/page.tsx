@@ -24,6 +24,8 @@ export default function AgentRoom() {
     <ContentLayout
       title="The Agent Room"
       description="Before you build anything, bring a room full of specialists into the conversation. A critical agent that finds holes. A user agent that simulates confusion. A designer, an architect, a PM. Each one a Claude session with a specific role, asking the question their discipline demands."
+      category="Build"
+      position={{ current: 5, total: 19 }}
       sections={sections}
       prev={{ href: "/memory-and-context", label: "Memory & Context" }}
       next={{ href: "/user-stories", label: "User Stories" }}

@@ -16,6 +16,8 @@ export default function GettingStarted() {
     <ContentLayout
       title="Getting Started"
       description="How to onboard Claude Code to a project — whether it's a fresh repo or a large existing codebase — and set up the foundation for every session that follows."
+      category="Foundation"
+      position={{ current: 1, total: 19 }}
       sections={sections}
       next={{ href: "/claude-md", label: "CLAUDE.md" }}
     >

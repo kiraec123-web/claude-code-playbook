@@ -20,6 +20,8 @@ export default function CodeReview() {
     <ContentLayout
       title="Code Review & QA"
       description="Claude Code is typically used to write code — but it's equally useful as a reviewer. Used well, it can surface edge cases, security issues, and architectural problems before they reach production."
+      category="Quality"
+      position={{ current: 17, total: 19 }}
       sections={sections}
       prev={{ href: "/debugging", label: "Debugging" }}
       next={{ href: "/changelog-and-prs", label: "Changelog & PRs" }}

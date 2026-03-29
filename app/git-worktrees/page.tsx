@@ -21,6 +21,8 @@ export default function GitWorktrees() {
     <ContentLayout
       title="Git Worktrees"
       description="Git worktrees let you run multiple Claude Code sessions in parallel — each on its own branch, each with a clean context, each making progress simultaneously. It&apos;s one of the highest-leverage workflow patterns for shipping faster."
+      category="Build"
+      position={{ current: 11, total: 19 }}
       sections={sections}
       prev={{ href: "/settings-and-shortcuts", label: "Settings & Shortcuts" }}
       next={{ href: "/sprint-efficiency", label: "10x Your Sprint" }}

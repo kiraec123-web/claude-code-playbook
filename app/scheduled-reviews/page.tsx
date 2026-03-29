@@ -21,6 +21,8 @@ export default function ScheduledReviews() {
     <ContentLayout
       title="Scheduled Reviews & Automation"
       description="The most consistent engineering teams aren't just using Claude to write code — they've wired it into their daily rhythm. Morning standups, end-of-day summaries, security reviews, user feedback sessions, and CEO-level sense checks, all running automatically."
+      category="Build"
+      position={{ current: 13, total: 19 }}
       sections={sections}
       prev={{ href: "/sprint-efficiency", label: "10x Your Sprint" }}
       next={{ href: "/prompt-library", label: "Prompt Library" }}

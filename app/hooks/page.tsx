@@ -19,6 +19,8 @@ export default function Hooks() {
     <ContentLayout
       title="Hooks"
       description="Hooks are shell commands that run automatically at specific points in Claude Code's lifecycle. They give you deterministic control — not suggestions, not guidelines, but guaranteed execution before or after Claude acts."
+      category="Build"
+      position={{ current: 8, total: 19 }}
       sections={sections}
       prev={{ href: "/agents-and-tools", label: "Agents & Tools" }}
       next={{ href: "/plan-mode", label: "Plan Mode" }}
