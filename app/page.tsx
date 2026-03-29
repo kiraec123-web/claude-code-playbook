@@ -31,42 +31,6 @@ const featuredPath = [
   },
 ];
 
-const allGuides = [
-  {
-    label: "Foundation",
-    links: [
-      { href: "/getting-started", label: "Getting Started" },
-      { href: "/prompting", label: "Prompting Patterns" },
-      { href: "/memory-and-context", label: "Memory & Context" },
-    ],
-  },
-  {
-    label: "Build",
-    links: [
-      { href: "/user-stories", label: "User Stories & Tickets" },
-      { href: "/agents-and-tools", label: "Agents & Tools" },
-      { href: "/hooks", label: "Hooks" },
-      { href: "/plan-mode", label: "Plan Mode" },
-      { href: "/scheduled-reviews", label: "Scheduled Reviews" },
-    ],
-  },
-  {
-    label: "Quality",
-    links: [
-      { href: "/testing", label: "Testing" },
-      { href: "/debugging", label: "Debugging" },
-      { href: "/code-review", label: "Code Review & QA" },
-      { href: "/changelog-and-prs", label: "Changelog & PRs" },
-    ],
-  },
-  {
-    label: "Config",
-    links: [
-      { href: "/settings-and-shortcuts", label: "Settings & Shortcuts" },
-      { href: "/security", label: "Security" },
-    ],
-  },
-];
 
 export default function Home() {
   return (
@@ -98,16 +62,13 @@ export default function Home() {
             The full methodology — from understanding a problem to shipping clean code. Structured thinking, prompt engineering, and the workflow patterns that actually work.
           </p>
 
-          <div className="mt-10 flex items-center gap-4">
+          <div className="mt-10">
             <Link
               href="/how-i-work"
               className="inline-flex items-center gap-2 bg-[#f5a623] text-[#0a0a0a] font-semibold text-sm px-5 py-2.5 rounded-md hover:bg-[#e09520] transition-colors"
             >
               Start with How I Work →
             </Link>
-            <a href="#all-guides" className="text-sm text-[#71717a] hover:text-[#fafafa] transition-colors">
-              Browse all guides
-            </a>
           </div>
         </div>
       </section>
@@ -139,40 +100,6 @@ export default function Home() {
               </Link>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* All guides — compact list */}
-      <section id="all-guides" className="mx-auto max-w-7xl px-6 py-14">
-        <div className="flex items-center gap-3 mb-8">
-          <p className="text-[10px] font-semibold uppercase tracking-widest text-[#3f3f46]">
-            All guides
-          </p>
-          <div className="flex-1 h-px bg-[#1a1a1a]" />
-          <Link href="/prompt-library" className="text-[10px] text-[#3f3f46] font-mono hover:text-[#f5a623] transition-colors">
-            Prompt Library →
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {allGuides.map((group) => (
-            <div key={group.label}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest text-[#3f3f46] mb-3">
-                {group.label}
-              </p>
-              <div className="flex flex-col gap-1">
-                {group.links.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="text-sm text-[#52525b] hover:text-[#fafafa] transition-colors py-0.5"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          ))}
         </div>
       </section>
 
